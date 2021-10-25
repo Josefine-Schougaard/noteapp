@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noteapp</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    
+    <div class="container my-5">
+        <h2>Notes</h2>
+        <button class="btn btn-primary" id="imp-notes">Show important notes only</button>
+        <ul>
+            
+        </ul>
+        <form>
+            <label for="notes">Add a new note</label>
+            <div class="input-group">
+                <label class="input-group-text">Title</label>
+                <input type="text" class="form-control" id="note" required>
+            </div>
+            <div class="input-group">
+                <label class="input-group-text">Note</label>
+                <textarea type="text" aria-label="with textarea" id="body" class="form-control" required></textarea>
+            </div>
+            <div class="form-check">
+                <label class="form-check-label">Important note</label>
+                <input type="checkbox" class="form-check-input" id="important">
+            </div>
+                <button type="submit" id="add" value="add" class="btn btn-outline-secondary">Add note</button>
+                <button type="button" id="secretupdate" class="btn btn-outline-secondary d-none">Update note</button>
+        </form>
+        <br>
+        <button id="unsub" class="btn btn-danger">Unsubscribe from changes</button>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script>
+        const Config = {
+          apiKey: "AIzaSyDYcu0VhV3BWu0mL_tCQy9nJmRITxbSQ_I",
+          authDomain: "noteapp-970af.firebaseapp.com",
+          projectId: "noteapp-970af",
+          storageBucket: "noteapp-970af.appspot.com",
+          messagingSenderId: "913737049073",
+          appId: "1:913737049073:web:43dd5ae40ac03b46b19a50",
+        };
+      
+        // Initialize Firebase
+        firebase.initializeApp(Config)
+        const db = firebase.firestore();
+      </script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+      <script src="main.js"></script>
+</body>
+</html>
